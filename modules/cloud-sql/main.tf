@@ -74,6 +74,7 @@ resource "google_sql_database_instance" "master" {
       enabled                        = var.backup_enabled
       start_time                     = var.backup_start_time
       point_in_time_recovery_enabled = var.point_in_time_recovery_enabled
+      transaction_log_retention_days = var.transaction_log_retention_days
     }
 
     maintenance_window {

@@ -271,3 +271,9 @@ variable "point_in_time_recovery_enabled" {
   type = bool
   default = false
 }
+
+variable "transaction_log_retention_days" {
+  description = "The number of days of transaction logs we retain for point in time restore"
+  type = number
+  default = null
+}
