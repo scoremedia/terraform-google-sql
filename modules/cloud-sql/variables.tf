@@ -265,3 +265,9 @@ variable "dependencies" {
   type        = list(string)
   default     = []
 }
+
+variable "point_in_time_recovery_enabled" {
+  description = "Will restart database if enabled after instance creation."
+  type = bool
+  default = false
+}
