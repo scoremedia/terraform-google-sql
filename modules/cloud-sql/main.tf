@@ -25,7 +25,7 @@ locals {
 provider "google-beta" {
   project = var.project
   region  = var.region
-  version = "~> 2.20.0"
+  version = "~> 3.74.0"
 }
 
 # ------------------------------------------------------------------------------
