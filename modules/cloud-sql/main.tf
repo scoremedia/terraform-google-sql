@@ -25,7 +25,7 @@ locals {
 provider "google-beta" {
   project = var.project
   region  = var.region
-  version = "~> 2.20.0"
+  version = "~> 3.74.0"
 }
 
 # ------------------------------------------------------------------------------
@@ -70,9 +70,11 @@ resource "google_sql_database_instance" "master" {
     }
 
     backup_configuration {
-      binary_log_enabled = local.actual_binary_log_enabled
-      enabled            = var.backup_enabled
-      start_time         = var.backup_start_time
+      binary_log_enabled             = local.actual_binary_log_enabled
+      enabled                        = var.backup_enabled
+      start_time                     = var.backup_start_time
+      point_in_time_recovery_enabled = var.point_in_time_recovery_enabled
+      transaction_log_retention_days = var.transaction_log_retention_days
     }
 
     maintenance_window {
